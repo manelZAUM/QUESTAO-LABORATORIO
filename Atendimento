@@ -1,0 +1,39 @@
+package NEW;
+
+import java.util.Date;
+
+public class Atendimento {
+
+	private Cliente cc;
+	private Servico serv;
+	private Cabeleleiro cab;
+    private Date data;
+
+	public Date getData() {
+		return data;
+	}
+	public void setData(Date data) {
+		this.data = data;
+	}
+	public Cliente getCc() {
+		return cc;
+	}
+	public void setCc(Cliente cc) {
+		this.cc = cc;
+	}
+	public Servico getServ() {
+		return serv;
+	}
+	public void setServ(Servico serv) {
+		this.serv = serv;
+	}
+	public Cabeleleiro getCab() {
+		return cab;
+	}
+	public void setCab(Cabeleleiro cab) {
+		this.cab = cab;
+	}
+
+	
+	
+}

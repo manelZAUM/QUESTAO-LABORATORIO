@@ -1,0 +1,124 @@
+package NEW;
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.Random;
+import java.util.Date;
+
+public class Mainnm {
+
+	public static void main(String[] args) {
+		Random ale=new Random(1000);
+		int id=ale.nextInt(1000);
+		
+		//objeto clienTE
+		Cliente c1=new Cliente();
+		
+		//criando um id para o cliente
+		c1.idd(id);
+		
+		//usuario preenchendo
+		System.out.print("NOME: \n");
+		String nome=sc.nextLine();
+		
+		while(nome.length()<3) {
+		
+		System.out.print("DESCULPE, MAS O NOME DEVE SER IGUAL OU SUPERIOR A 3 caractere: \n");
+		System.out.print("por favor, escreva seu nome novamente\n");
+		nome=sc.next();
+		
+		}
+		c1.setNome(nome);
+		
+		System.out.print("DIGITE SEU CPF: ");
+		String num=sc.nextLine();
+		while(num.length()<0) {
+			System.out.println("ESPACO EM BRANCO, DIGITE ALGO :");
+			num=sc.nextLine();
+		}
+		c1.setCPF(num);
+		
+		//imprimir;
+		System.out.println("ID : "+c1.id+" ");
+		System.out.println("NOME : "+c1.getNome()+" ");
+		System.out.println("CPF : "+c1.getCPF()+" ");
+	
+		Cabeleleiro cab1= new Cabeleleiro();
+		Cabeleleiro cab2=new Cabeleleiro();
+		ArrayList<Cabeleleiro> func= new ArrayList <Cabeleleiro>();
+		
+		id=ale.nextInt();
+		cab1.setId(id);
+		cab1.setNome("gil");
+		cab1.setCpf("123433434");
+		
+		id=ale.nextInt();
+		cab2.setId(id);
+		cab2.setNome("FERNANDA");
+		cab1.setCpf("10293838");
+		func.add(cab2);
+		
+		ArrayList<Servico> listserv=new ArrayList<Servico>();
+		
+		Servico serv1=new Servico();
+		id=ale.nextInt();
+		serv1.setId(id);
+		serv1.setNome("CHAPINHA");
+		serv1.setValor(35.00);
+		serv1.setDesc("ALISAMENTO RAPIDO DO CABELO");
+		
+		Servico serv2=new Servico();
+		id=ale.nextInt();
+		serv2.setId(id);
+		serv2.setNome("HIDRATACAO");
+		serv2.setValor(50.00);
+		serv2.setDesc("REFORÇAR SEUS FIOS E COURO CABELUDO");
+		
+		Servico serv3=new Servico();
+		id=ale.nextInt();
+		serv3.setId(id);
+		serv3.setNome("CORTE SIMPLES");
+		serv3.setValor(80.00);
+		serv3.setDesc("SIMPLES CORTE DE CABELO");
+		
+		
+		listserv.add(serv3);
+		
+		Atendimento atendd= new Atendimento();
+		ArrayList<Atendimento>atend=new ArrayList<Atendimento>();
+		atendd.setCc(c1);
+		System.out.println("OLA "+c1.getNome()+" qual servico deseja hoje ?");
+		
+		for(int i=0;i<3;i++) {
+			System.out.println(listserv.get(i));
+		}
+		System.out.println("DIGITE A OPCAO DESEJADA:");
+		int op=sc.nextInt();
+		while(op<0 || op>3) {
+			op=sc.nextInt();
+			System.out.println("OPCAO INVALIDA, ESCOLHA NOVAMENTE");
+		}
+		
+		if(op==1) {
+		atendd.setCab(cab2);
+		atendd.setCc(c1);
+		atendd.setServ(serv1);
+		atend.add(atendd);
+       }else if(op==2) {
+    			atendd.setCab(cab1);
+    			atendd.setCc(c1);
+    			atendd.setServ(serv1);
+    			atend.add(atendd);
+    	}else {
+    		
+			atendd.setCab(cab1);
+			atendd.setCc(c1);
+			atendd.setServ(serv3);
+			atend.add(atendd);
+			
+    	}
+		
+		
+		
+	}
+	
+}	

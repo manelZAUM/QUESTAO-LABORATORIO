@@ -1,0 +1,32 @@
+package NEW;
+
+public class Cliente {
+
+	public int id;
+	private String nome;
+	private String CPF;
+	
+	
+	public void idd(int iddd) {
+		this.id=iddd;
+	}
+
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+
+	public void setCPF(String num) {
+		this.CPF=num;
+	}
+	
+	public String getCPF() {
+		return CPF;
+	}
+
+}
